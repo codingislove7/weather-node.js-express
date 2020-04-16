@@ -2,7 +2,7 @@ console.log("client side javascript file is loaded");
 const err = document.querySelector(".error");
 const res = document.querySelector(".result");
 const logAddress = (address = "dubai") => {
-  fetch("http://localhost:8080/weather?address=" + address).then((response) => {
+  fetch("/weather?address=" + address).then((response) => {
     response.json().then((data) => {
       if (data.error) {
         err.innerHTML = data.error;

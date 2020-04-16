@@ -7,7 +7,7 @@ const weather = require("./utils/weather.js");
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
-
+const port = process.env.PORT || 3000;
 //Setup handelbars engine and views location
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
@@ -82,6 +82,6 @@ app.get("*", (req, res) => {
     errorMessage: "Page not found. 404",
   });
 });
-app.listen(8080, () => {
-  console.log("Server is up on port 9000.");
+app.listen(port, () => {
+  console.log("Server is up on port " + port + ".");
 });
